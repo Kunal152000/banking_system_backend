@@ -1,0 +1,6 @@
+{
+  "jwtPrivateKey": "banking_jwtPrivateKey",
+  "dbCreds": "mongodb+srv://Kunal:Kunal123@cluster0.2j2kc0g.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
+  "email": "kunal15febjha@gmail.com",
+  "emailPassword": "15Feb15Nov@"
+}

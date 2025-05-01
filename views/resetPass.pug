@@ -1,0 +1,11 @@
+doctype html
+html
+  head
+    title Reset Password
+  body
+    h1 Reset Your Password
+    form(action="http://localhost/api/me/reset" method="POST")
+      input(type="hidden" name="token" value=token)
+      label(for="password") New Password:
+      input(type="password" name="password" required)
+      button(type="submit") Reset Password
