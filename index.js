@@ -1,4 +1,5 @@
 require("express-async-errors");
+const Dotenv = require("dotenv");
 const winston = require("winston");
 const express = require("express");
 const app = express();
@@ -12,10 +13,11 @@ const resetPass = require("./routes/resetPass");
 const user = require("./routes/user");
 const bank = require("./routes/bank");
 const error = require("./middleware/error");
-const config = require("config");
+// const config = require("./config");
+Dotenv.config();
 const DbConnect = require("./database/db_connection");
 DbConnect.createDB();
-
+const private_key = process.env.JWT_PRIVATE_KEY;
 winston.add(winston.transports.File, { filename: "logfile.log" });
 process.on("uncaughtException", (ex) => {
   winston.error(ex.message, err);
@@ -27,9 +29,9 @@ process.on("unhandledRejection", (ex) => {
   process.exit(1);
 });
 
-if (!config.get("jwtPrivateKey")) {
-  console.log(config.get("jwtPrivateKey"));
-  console.error("FATAL ERROR: jwtPrivateKey is not defined.");
+if (!private_key) {
+  console.log(private_key);
+  console.error("FATAL ERROR: JWT_PRIVATE_KEY is not defined.");
   process.exit(1);
 }
 

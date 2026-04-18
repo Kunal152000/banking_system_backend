@@ -12,6 +12,7 @@
   "dependencies": {
     "bcrypt": "^5.0.1",
     "config": "^1.29.4",
+    "dotenv": "^17.4.2",
     "express": "^4.17.1",
     "express-async-errors": "^2.1.0",
     "joi": "^13.1.0",

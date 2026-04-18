@@ -2,8 +2,8 @@ const mongoose = require("mongoose");
 const bankSchema = require("./bank");
 const userSchema = require("./user");
 const jwt = require("jsonwebtoken");
-const config = require("config");
-
+// const config = require("../config");
+const private_key = process.env.jwtPrivateKey;
 const customerSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -42,7 +42,7 @@ const customerSchema = new mongoose.Schema({
   },
 });
 customerSchema.methods.generateAuthToken = function () {
-  const token = jwt.sign({ _id: this._id }, config.get("jwtPrivateKey"), {
+  const token = jwt.sign({ _id: this._id }, private_key, {
     expiresIn: "3000s",
   });
   return token;
