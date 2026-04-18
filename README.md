@@ -10,7 +10,7 @@ This application contains 5 functionalities,
 ********************** DETAILS OF THE PROJECT ***************************
 
 In this project I have created backend of banking system which is in Node Js, in this project you will find out folders:
-1. config: which contains all my configuration variables that is used for the JWT.
+1. .env: which contains all my configuration variables that is used for the JWT.
 2. Database: contain my database which is in Mongodb.
 3. Middlewares: It contains all my custom middleware such as auth.js, async.js, error.js which authorize a user by checking the jwt of it, finding error.
 4. Models: In this i have 3 models files: User, Customer, bank. These files contains scehema and models. 
